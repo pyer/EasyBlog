@@ -98,20 +98,13 @@ class Easy
 
   def process_posts
     FileUtils.mkdir @site +'/posts'
-    content = ''
     list = Dir['posts/*.md'].reverse
     list.each { |post|
       post_name = File.basename(post, '.md')
       title = post_name.sub('_', ' ')
-      ref = '<a class="page-link" href="/posts/' + post_name + '.html">' + title + "</a>\n"
+      ref = '"/posts/' + post_name + '.html">' + title
       @list_of_posts.push(ref)
-      content << ' <div class="trigger">' + ref
-    }
-    process_page('posts', 'Posts', content)
     
-    list.each { |post|
-      post_name = File.basename(post, '.md')
-      title = post_name.sub('_', ' ')
       content = markdown_to_html(File.read(post))
       process_page('posts/'+post_name, title, content)
     }

@@ -135,8 +135,8 @@
                   <h1>Blog</h1>
                </div>
                <% for @item in @list_of_posts %>
-                     <div class="blog-info">
-                        <%= @item %>
+                     <div class="blog-link">
+                        <a class="page-link" href=<%= @item %></a>
                      </div>
                <% end %>
          </div>

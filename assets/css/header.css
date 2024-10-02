@@ -37,10 +37,14 @@ header .row {
 
 .brand-name a {
   font-family: 'Lobster', cursive;
-  font-size: 22px;
+  font-size: 40px;
   font-weight: 500;
   color: #ecf1fa;
   position: relative;
+}
+
+.fixed .brand-name a {
+  color: #000;
 }
 
 .hamburger {
@@ -118,6 +122,7 @@ header .row {
 
   .brand-name a {
     color: #01143e;
+    font-size: 30px;
   }
 
   .hamburger {
@@ -157,3 +162,4 @@ header .row {
   }
 
 }
+
