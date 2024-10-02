@@ -21,6 +21,12 @@
     font-size: 18px !important;
 }
 
+.blog-page {
+    background-color: #01143e;
+}
+
+
+
 .blog-content {
     display: flex;
     flex-wrap: wrap;
