@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="keywords" content="HTML, CSS, JavaScript">
+      <meta name="description"
+         content="A clean and responsive blog template for developers. Using only HTML, CSS, and JavaScript">
+      <meta name="author" content="Pierre BAZONNARD">
+      <title>Pyer's blog</title>
+      <link rel="stylesheet" href="./css/header.css" />
+      <link rel="stylesheet" href="./css/main.css" />
+      <link rel="stylesheet" href="./css/home.css" />
+      <link rel="stylesheet" href="./css/portfolio.css" />
+      <link rel="stylesheet" href="./css/blog.css" />
+      <link rel="stylesheet" href="./css/contact.css" />
+      <link rel="stylesheet" href="./css/about.css" />
+      <link rel="stylesheet" href="./css/footer.css" />
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <div class="row">
+               <div class="brand-name">
+                  <a href="/">Pyer</a>
+               </div>
+               <div class="hamburger">
+                  <img src="./img/menu.png" alt="menu"/>
+               </div>
+               <div class="navbar">
+                  <ul>
+                     <li><a href="#home" class="active">Home</a></li>
+                     <li><a href="#portfolio">Portfolio</a></li>
+                     <li><a href="#blog">Blog</a></li>
+                     <li><a href="#contact">Contact</a></li>
+                     <li><a href="#about">About</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section class="home" id="home">
+         <div class="container">
+            <div class="row full-screen">
+               <div class="home-content">
+                  <div class="block">
+                     <h6>Hi, my name is</h6>
+                     <h1>Pierre BAZONNARD</h1>
+                     <h6>Welcome on my web site.</h6>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="portfolio" id="portfolio">
+         <div class="container">
+            <div class="row">
+               <div class="title text-center">
+                  <h1>Latest Works</h1>
+               </div>
+            </div>
+            <div class="row">
+               <div class="filter-btn">
+                  <ul id="filterBtn">
+                     <li class="active" data-target="all">All</li>
+                     <li data-target="web">Web Design</li>
+                     <li data-target="app">App Interface</li>
+                     <li data-target="ui">UI/UX</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row">
+               <div class="gallery">
+                  <div class="item" data-id="web">
+                     <div class="inner">
+                        <img src="./img/portfolio/web.jpg" alt="portfolio"/>
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>Web Design</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item" data-id="web">
+                     <div class="inner">
+                        <img src="./img/portfolio/web2.png" alt="portfolio"/>
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>Web Design</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item" data-id="app">
+                     <div class="inner">
+                        <img src="./img/portfolio/app.png" alt="portfolio"/>
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>App Interface</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item" data-id="app">
+                     <div class="inner">
+                        <img src="./img/portfolio/app2.png" alt="portfolio"/>
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>App Interface</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item" data-id="ui">
+                     <div class="inner">
+                        <img src="./img/portfolio/ui2.png" alt="portfolio"/>
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>UI/UX Design</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item" data-id="ui">
+                     <div class="inner">
+                        <img src="./img/portfolio/ui3.png" alt="portfolio"/>
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>UI/UX Design</h4>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="blog" id="blog">
+         <div class="container">
+               <div class="title text-center">
+                  <h1>Blog</h1>
+               </div>
+               <% for @item in @list_of_posts %>
+                     <div class="blog-info">
+                        <%= @item %>
+                     </div>
+               <% end %>
+         </div>
+      </section>
+      <section class="contact" id="contact">
+         <div class="container">
+            <div class="row">
+               <div class="title text-center">
+                  <h1>Contact</h1>
+               </div>
+            </div>
+            <div class="row">
+               <div class="contact-form">
+                  <div class="row">
+                     <div class="contact-text">
+                        <h2>Drop me a message</h2>
+                        <p>My inbox is always open. I'll try my best to get back to you!</p>
+                     </div>
+                  </div>
+                  <div class="row space-between">
+                     <div class="col-6">
+                        <input type="text" class="form-control" name="" placeholder="Name" />
+                     </div>
+                     <div class="col-6">
+                        <input type="text" class="form-control" name="" placeholder="Email" />
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-12">
+                        <textarea class="form-control" placeholder="Your Message"></textarea>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="button btn">
+                        <a href="#">Send</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="about" id="about">
+         <div class="container">
+         <div class="row">
+            <div class="title">
+               <h1>About Me</h1>
+               <p>Know more about me</p>
+            </div>
+         </div>
+         <div class="row">
+            <div class="about-content">
+               <div class="row">
+                  <div class="img">
+                     <img src="img/me.png" alt='me' />
+                  </div>
+                  <div class="text">
+                     <h4>I'm Puskar Adhikari</h4>
+                     <h6>A <span>Web developer</span> and <span>front-end engineer</span> living and working in
+                        Kathmandu, Nepal
+                     </h6>
+                     <p>I'm passionate about creating and developing clean, unique, elegant products. I specialize in
+                        building Websites for small to medium size business. I keep my code clean, readable, modular and
+                        well refactored. I enjoy working with complex user interfaces
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer>
+         <div class="container">
+            <div class="copyright">
+               <p>© <%= @year %> | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved.</p>
+            </div>
+         </div>
+      </footer>
+      <script src="./js/app.js"></script>
+   </body>
+</html>
+

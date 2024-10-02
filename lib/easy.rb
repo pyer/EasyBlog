@@ -7,23 +7,28 @@ require 'redcarpet'
 
 class Easy
   attr_reader :site, :list_of_posts
-  attr_reader :header, :footer, :template, :home
+  attr_reader :index, :template
+  attr_reader :year
 
   def initialize(site)
     @site = site
     @list_of_posts = []
-    @header = File.read('templates/header.html')
-    @footer = File.read('templates/footer.html')
     @template = File.read('templates/page.erb')
-    @home = File.read('templates/home.erb')
+    @index = File.read('templates/index.erb')
+    @year = Time.now.year.to_s
+#    FileUtils.mkdir @site
+#    FileUtils.mkdir @site +'/pages'
+#    FileUtils.mkdir @site +'/posts'
+#    FileUtils.cp_r('css', @site)
+#    FileUtils.cp_r('images', @site)
   end
 
   def process
-    FileUtils.cp_r('templates/site', @site)
+    FileUtils.cp_r('assets', @site)
     process_templates
     process_pages
     process_posts
-    process_home
+    process_index
   end
 
   private
@@ -45,8 +50,8 @@ class Easy
     write(name, renderer.result(binding))
   end
 
-  def process_home
-    renderer = ERB.new(@home)
+  def process_index
+    renderer = ERB.new(@index)
     write('index', renderer.result(binding))
   end
 
@@ -61,6 +66,8 @@ class Easy
   end 
 
   def process_pages
+    FileUtils.mkdir @site +'/pages'
+    # builds home page
     content = ''
     html_list = Dir['pages/*.html'].sort
     html_list.each { |page|
@@ -74,12 +81,14 @@ class Easy
     }
     process_page('pages', 'Pages', content)
 
+    # builds each html page
     html_list.each { |page|
       title = File.basename(page, '.html')
       content = File.read(page)
       process_page('pages/'+title, title, content)
     }
 
+    # builds each md page
     md_list.each { |page|
       title = File.basename(page, '.md')
       content = markdown_to_html(File.read(page))
@@ -88,6 +97,7 @@ class Easy
   end 
 
   def process_posts
+    FileUtils.mkdir @site +'/posts'
     content = ''
     list = Dir['posts/*.md'].reverse
     list.each { |post|
