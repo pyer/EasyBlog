@@ -2,10 +2,6 @@
     padding: 100px 15px;
 }
 
-.contact .row .title h1::before {
-    left: 30%;
-}
-
 .contact-form {
     background-color: #fff;
     flex: 0 0 100%;
@@ -36,20 +32,16 @@
     margin: 0;
 }
 
-.contact-form .row {
-    flex-wrap: wrap;
-}
-
-.col-6 {
+.contact-input {
     flex: 0 0 calc(50% - 15px);
     max-width: calc(50% - 15px);
 }
 
-.col-6 input {
+.contact-input input {
     border-radius: 5px;
 }
 
-.col-12 {
+.contact-message {
     flex: 0 0 100%;
     max-width: 100%;
 }
@@ -65,13 +57,17 @@
 
 }
 
+.form-control::placeholder {
+    color: #838383
+}
+
+.contact-form .row {
+    flex-wrap: wrap;
+}
+
 .contact-form textarea.form-control {
     height: 120px;
     border-radius: 5px;
-}
-
-.form-control::placeholder {
-    color: #838383
 }
 
 .contact-form .button {
@@ -88,3 +84,4 @@
     color: #fff;
     background-color: #01143e;
 }
+

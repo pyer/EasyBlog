@@ -43,7 +43,7 @@ a {
 
 .title h1::before {
   content: "";
-  left: 0;
+  left: 30%;
   right: 30%;
   position: absolute;
   height: 2px;
@@ -239,7 +239,7 @@ footer {
 
 .navbar ul li a:hover::before {
   width: 100%;
-  left: 0px;
+  left: 0;
 }
 
 .navbar ul li a.active::before {

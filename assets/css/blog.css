@@ -3,10 +3,6 @@
     padding: 100px 0px;
 }
 
-.blog .container .title h1::before {
-    left: 30%;
-}
-
 .blog-link {
     text-align: center !important;
     font-size: 18px !important;
@@ -24,8 +20,6 @@
 .blog-page {
     background-color: #01143e;
 }
-
-
 
 .blog-content {
     display: flex;
