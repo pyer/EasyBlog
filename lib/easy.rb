@@ -8,14 +8,14 @@ require 'redcarpet'
 class Easy
   attr_reader :site, :list_of_posts
   attr_reader :index, :template
-  attr_reader :year
+  attr_reader :copyright
 
   def initialize(site)
     @site = site
     @list_of_posts = []
     @template = File.read('templates/page.erb')
     @index = File.read('templates/index.erb')
-    @year = Time.now.year.to_s
+    @copyright = Time.now.year.to_s + " | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved."
 #    FileUtils.mkdir @site
 #    FileUtils.mkdir @site +'/pages'
 #    FileUtils.mkdir @site +'/posts'

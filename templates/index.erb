@@ -8,13 +8,11 @@
          content="A clean and responsive blog template for developers. Using only HTML, CSS, and JavaScript">
       <meta name="author" content="Pierre BAZONNARD">
       <title>Pyer's blog</title>
-      <link rel="stylesheet" href="./css/header.css" />
       <link rel="stylesheet" href="./css/main.css" />
       <link rel="stylesheet" href="./css/home.css" />
       <link rel="stylesheet" href="./css/blog.css" />
       <link rel="stylesheet" href="./css/contact.css" />
       <link rel="stylesheet" href="./css/about.css" />
-      <link rel="stylesheet" href="./css/footer.css" />
    </head>
    <body>
       <header>
@@ -108,21 +106,19 @@
                      <h4>Pierre Bazonnard</h4>
                      <p>A developer and system administrator living in Gagny, France.
                      </p>
-                     <a href="https://github.com/pyer/EasyBlog">This site is on Github</a>
+                     <a href="https://github.com/pyer/EasyBlog">Pierre developed this site.</a>
                </div>
                <div>
                      <h4>Puskar Adhikari</h4>
                      <p>A Web developer and front-end engineer living in Kathmandu, Nepal.
                      </p>
-                     <a href="https://github.com/thepuskar/Personal-Portfolio-v1">This template is on Github</a>
+                     <a href="https://github.com/thepuskar/Personal-Portfolio-v1">Puskar designed the template.</a>
                </div>
          </div>
       </section>
       <footer>
          <div class="container">
-            <div class="copyright">
-               <p>© <%= @year %> | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved.</p>
-            </div>
+               <p><%= @copyright %></p>
          </div>
       </footer>
       <script src="./js/app.js"></script>
