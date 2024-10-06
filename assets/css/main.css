@@ -277,14 +277,13 @@ footer {
     display: none;
   }
 
-  .navbar .show {
+  .show {
     display: block;
   }
 
   .navbar ul li {
     display: block;
     margin-left: 0;
-
   }
 
   .navbar ul li a {
