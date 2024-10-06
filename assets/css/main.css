@@ -16,6 +16,50 @@ body {
   margin: 0;
 }
 
+header {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  border-bottom: 1px solid #423940;
+  padding: 0px 15px;
+}
+
+.fixed {
+  background-color: #ecf1fa;
+  position: fixed;
+  border-color: #eee;
+  animation: fixHeader 1s ease;
+  z-index: 11;
+}
+
+@keyframes fixHeader {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+header .row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-name a {
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  font-weight: 500;
+  color: #ecf1fa;
+  position: relative;
+}
+
+.fixed .brand-name a {
+  color: #000;
+}
+
+
 a {
   text-decoration: none;
   font-size: 15px;
@@ -124,64 +168,6 @@ a {
     flex: 0 0 100%;
     max-width: 100%;
   }
-
-}
-
-@keyframes fixHeader {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-
-
-header {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  border-bottom: 1px solid #423940;
-  padding: 0px 15px;
-  z-index: 11;
-}
-
-header .row {
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer {
-  background-color: #01143e;
-  color: #ecf1fa;
-  border-top: 1px solid #423940;
-  padding: 15px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-
-.fixed {
-  background-color: #ecf1fa;
-  position: fixed;
-  border-color: #eee;
-  animation: fixHeader 1s ease;
-  z-index: 11;
-}
-
-.brand-name a {
-  font-family: 'Lobster', cursive;
-  font-size: 40px;
-  font-weight: 500;
-  color: #ecf1fa;
-  position: relative;
-}
-
-.fixed .brand-name a {
-  color: #000;
 }
 
 .hamburger {
@@ -247,6 +233,29 @@ footer {
   left: 0;
 }
 
+.navbar ul li select {
+  background-color: #01143e;
+  color: #ecf1fa;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 72px;
+}
+
+.fixed .navbar ul li select {
+  background-color: #ecf1fa;
+  color: #000;
+}
+
+footer {
+  background-color: #01143e;
+  border-top: 1px solid #423940;
+  color: #ecf1fa;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 15px;
+  text-align: center;
+}
+
 
 @media(max-width: 767px) {
   header {
@@ -287,13 +296,19 @@ footer {
   }
 
   .navbar ul li a {
-    line-height: 42px;
     color: #01143e;
+    line-height: 42px;
   }
 
   .navbar ul li a::before {
-    bottom: -3px;
     background-color: #01143e;
+    bottom: -3px;
+  }
+
+  .navbar ul li select {
+    background-color: #ecf1fa;
+    color: #01143e;
+    line-height: 72px;
   }
 
 }
