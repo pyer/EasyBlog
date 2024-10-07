@@ -101,7 +101,7 @@ class Easy
     list = Dir['posts/*.md'].reverse
     list.each { |post|
       post_name = File.basename(post, '.md')
-      title = post_name.sub('_', ' ')
+      title = post_name.gsub('_', ' ')
       ref = '"/posts/' + post_name + '.html">' + title
       @list_of_posts.push(ref)
     
