@@ -3,6 +3,14 @@
     padding: 100px 0px;
 }
 
+.blog-exit a {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ecf1fa;
+  position: relative;
+}
+
+
 .blog-link {
     text-align: center !important;
     font-size: 18px !important;
@@ -20,6 +28,28 @@
 .blog-page {
     background-color: #01143e;
 }
+
+
+.pages {
+    background-color: #fff;
+    padding: 100px 0px;
+}
+
+.pages-link {
+    text-align: center !important;
+    font-size: 18px !important;
+    color: #838383;
+    background-color: #ecf1fa;
+    margin: 10px;
+    padding: 10px 0;
+}
+
+.pages-link a {
+    text-align: center !important;
+    font-size: 18px !important;
+}
+
+
 
 .blog-content {
     display: flex;

@@ -6,21 +6,18 @@ require 'fileutils'
 require 'redcarpet'
 
 class Easy
-  attr_reader :site, :list_of_posts
+  attr_reader :site
+  attr_reader :list_of_pages, :list_of_posts
   attr_reader :index, :template
   attr_reader :copyright
 
   def initialize(site)
     @site = site
+    @list_of_pages = []
     @list_of_posts = []
     @template = File.read('templates/page.erb')
     @index = File.read('templates/index.erb')
     @copyright = Time.now.year.to_s + " | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved."
-#    FileUtils.mkdir @site
-#    FileUtils.mkdir @site +'/pages'
-#    FileUtils.mkdir @site +'/posts'
-#    FileUtils.cp_r('css', @site)
-#    FileUtils.cp_r('images', @site)
   end
 
   def process
@@ -67,33 +64,32 @@ class Easy
 
   def process_pages
     FileUtils.mkdir @site +'/pages'
-    # builds home page
-    content = ''
-    html_list = Dir['pages/*.html'].sort
-    html_list.each { |page|
-      page_name = File.basename(page, '.html')
-      content << ' <div class="trigger"><a class="page-link" href="/pages/' + page_name + '.html">' + page_name + "</a></div>\n"
-    }
-    md_list = Dir['pages/*.md'].sort
-    md_list.each { |page|
-      page_name = File.basename(page, '.md')
-      content << ' <div class="trigger"><a class="page-link" href="/pages/' + page_name + '.html">' + page_name + "</a></div>\n"
-    }
-    process_page('pages', 'Pages', content)
 
     # builds each html page
+    html_list = Dir['pages/*.html']
     html_list.each { |page|
-      title = File.basename(page, '.html')
+      name = File.basename(page, '.html')
+      title = name.gsub('_', ' ')
+      ref = '"/pages/' + name + '.html">' + title
+      @list_of_pages.push(ref)
+
       content = File.read(page)
-      process_page('pages/'+title, title, content)
+      process_page('pages/'+name, title, content)
     }
 
     # builds each md page
+    md_list = Dir['pages/*.md'].sort
     md_list.each { |page|
-      title = File.basename(page, '.md')
+      name = File.basename(page, '.md')
+      title = name.gsub('_', ' ')
+      ref = '"/pages/' + name + '.html">' + title
+      @list_of_pages.push(ref)
+    
       content = markdown_to_html(File.read(page))
-      process_page('pages/'+title, title, content)
+      process_page('pages/'+name, title, content)
     }
+    # Sorts the list
+    @list_of_pages.sort!
   end 
 
   def process_posts
