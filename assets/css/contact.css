@@ -8,17 +8,11 @@
     flex: 0 0 100%;
     padding: 40px;
     border: 1.5px solid #eee;
-    border-radius: 5px;
     max-width: 100%;
 }
 
 .contact-form .row {
     flex-wrap: wrap;
-}
-
-.contact-form textarea.form-control {
-    height: 120px;
-    border-radius: 5px;
 }
 
 .contact-form .button {
@@ -62,13 +56,12 @@
     max-width: calc(50% - 15px);
 }
 
-.contact-input input {
-    border-radius: 5px;
-}
-
 .contact-message {
     flex: 0 0 100%;
     max-width: 100%;
+}
+
+.contact-message textarea {
     min-height: 42vh;
 }
 
@@ -77,10 +70,10 @@
     width: 100%;
     margin-bottom: 15px;
     border: 1px solid #ced4da;
+    border-radius: 5px;
     padding: 6px 12px;
     font-size: 14px;
     font-weight: 400;
-
 }
 
 .form-control::placeholder {
