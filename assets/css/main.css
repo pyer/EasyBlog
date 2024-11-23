@@ -128,31 +128,6 @@ a {
   justify-content: space-between;
 }
 
-.button {
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
-  text-align: right;
-}
-
-.button a {
-  font-size: 14px;
-  color: #ecf1fa;
-  background-color: transparent;
-  border: 1.5px solid #ecf1fa;
-  border-radius: 4px;
-  padding: 12px 25px;
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-
-.button a:hover {
-  background-color: #fff;
-  color: #000;
-}
-
 @media(max-width: 991px) {
   .block h1 {
     font-size: 50px;

@@ -26,11 +26,13 @@
                </div>
                <div class="navbar">
                   <ul>
-                     <li><a href="#home" class="active">Home</a></li>
+                     <li class="en"><a href="#home" class="active">Home</a></li>
+                     <li class="fr"><a href="#home" class="active">Accueil</a></li>
                      <li><a href="#blog">Blog</a></li>
                      <li><a href="#pages">Pages</a></li>
                      <li><a href="#contact">Contact</a></li>
-                     <li><a href="#about">About</a></li>
+                     <li class="en"><a href="#about">About</a></li>
+                     <li class="fr"><a href="#about">A propos</a></li>
                      <li>
                         <select name="lang" id="lang">
                            <option value="en_US">English</option>
@@ -92,32 +94,59 @@
                </div>
             </div>
             <div class="row">
-               <div class="contact-form">
+               <!-- form class="contact-form" action="/contact" method="post" enctype="text/plain" autocomplete="on" -->
+               <form class="contact-form en" action="/contact" autocomplete="on">
                   <div class="row">
                      <div class="contact-text">
-                        <h2>Drop me a message</h2>
-                        <p>My inbox is always open. I'll try my best to get back to you!</p>
+                        <h2>Drop me a message.</h2>
+                        <p>My inbox is always open. I'll try my best to get back to you !</p>
                      </div>
                   </div>
                   <div class="row space-between">
                      <div class="contact-input">
-                        <input type="text" class="form-control" name="" placeholder="Name" />
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name" />
                      </div>
                      <div class="contact-input">
-                        <input type="text" class="form-control" name="" placeholder="Email" />
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Your email address" />
                      </div>
                   </div>
                   <div class="row">
                      <div class="contact-message">
-                        <textarea class="form-control" placeholder="Your Message"></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="Your message"></textarea>
                      </div>
                   </div>
                   <div class="row">
-                     <div class="button btn">
-                        <a href="#">Send</a>
+                     <div class="button">
+                        <input type="submit" value="Send">
                      </div>
                   </div>
-               </div>
+               </form>
+               <form class="contact-form fr" action="/contact" autocomplete="on">
+                  <div class="row">
+                     <div class="contact-text">
+                        <h2>Envoyez-moi un message.</h2>
+                        <p>Je ferai de mon mieux pour vous répondre rapidement !</p>
+                     </div>
+                  </div>
+                  <div class="row space-between">
+                     <div class="contact-input">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" />
+                     </div>
+                     <div class="contact-input">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Votre adresse e-mail" />
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="contact-message">
+                        <textarea class="form-control" id="message" name="message" placeholder="Votre message"></textarea>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="button">
+                        <input type="submit" value="Envoyer">
+                     </div>
+                  </div>
+               </form>
             </div>
          </div>
       </section>
@@ -134,11 +163,15 @@
                      <div>
                         <img src="./img/pyer.png" height="105" width="105"/>
                      </div>
-                     <div class="about-dev">
+                     <div class="about-dev en ">
                         <h4>Pierre Bazonnard</h4>
-                        <p>A developer and system administrator living in Gagny, France.
-                        </p>
+                        <p>A developer and Linux system administrator living in Gagny, France.</p>
                         <a href="https://github.com/pyer/EasyBlog">Pierre developed this site.</a>
+                     </div>
+                     <div class="about-dev fr">
+                        <h4>Pierre Bazonnard</h4>
+                        <p>Développeur et administrateur système Linux à Gagny, France.</p>
+                        <a href="https://github.com/pyer/EasyBlog">Pierre a développé ce site.</a>
                      </div>
                   </div>
                </div>
@@ -147,11 +180,15 @@
                      <div>
                         <img src="./img/thepuskar.jpeg" height="105" width="105"/>
                      </div>
-                     <div class="about-dev">
+                     <div class="about-dev en">
                         <h4>Puskar Adhikari</h4>
-                        <p>A Web developer and front-end engineer living in Kathmandu, Nepal.
-                        </p>
+                        <p>A Web developer and front-end engineer living in Kathmandu, Nepal.</p>
                         <a href="https://github.com/thepuskar/Personal-Portfolio-v1">Puskar designed the template.</a>
+                     </div>
+                     <div class="about-dev fr">
+                        <h4>Puskar Adhikari</h4>
+                        <p>Développeur Web et ingénieur 'front-end' à Kathmandu, Nepal.</p>
+                        <a href="https://github.com/thepuskar/Personal-Portfolio-v1">Puskar a conçu le graphisme de ce site.</a>
                      </div>
                   </div>
                </div>

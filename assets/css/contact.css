@@ -18,14 +18,24 @@
 .contact-form .button {
     flex: 0 0 100%;
     max-width: 100%;
+    text-align: right;
 }
 
-.contact-form .btn a {
+.contact-form .button input {
+    font-size: 14px;
+    color: #ecf1fa;
     background-color: #5f88e0;
-    float: right;
+    border: 1.5px solid #ecf1fa;
+    border-radius: 4px;
+    padding: 12px 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
-.contact-form .btn a:hover {
+.contact-form .button input:hover {
     color: #fff;
     background-color: #01143e;
 }
@@ -72,6 +82,7 @@
     border: 1px solid #ced4da;
     border-radius: 5px;
     padding: 6px 12px;
+    font-family: "sans", Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
 }
