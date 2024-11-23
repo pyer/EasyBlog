@@ -17,7 +17,7 @@ class Easy
     @list_of_posts = []
     @template = File.read('templates/page.erb')
     @index = File.read('templates/index.erb')
-    @copyright = Time.now.year.to_s + " | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved."
+    @copyright = "&#169;" + Time.now.year.to_s + " | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved."
   end
 
   def process
