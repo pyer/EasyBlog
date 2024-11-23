@@ -16,6 +16,11 @@ task :build => :clean do
   builder.process
 end
 
+desc "Deploy"
+task :deploy => :build do
+  system("sudo cp -r site /srv/")
+end
+
 desc 'Run server'
 task :run do
   server = WEBrick::HTTPServer.new(:Port => 8080, :DocumentRoot => TARGET)
