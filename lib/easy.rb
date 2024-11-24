@@ -9,6 +9,7 @@ class Easy
   attr_reader :site
   attr_reader :list_of_pages, :list_of_posts
   attr_reader :index, :template
+  attr_reader :backtracking
   attr_reader :copyright
 
   def initialize(site)
@@ -17,6 +18,7 @@ class Easy
     @list_of_posts = []
     @template = File.read('templates/page.erb')
     @index = File.read('templates/index.erb')
+    @backtracking = "/#pages"
     @copyright = "&#169;" + Time.now.year.to_s + " | Developed by Pierre BAZONNARD | Designed by Puskar Adhikari | All rights reserved."
   end
 
@@ -63,6 +65,7 @@ class Easy
   end 
 
   def process_pages
+    @backtracking = "/#pages"
     FileUtils.mkdir @site +'/pages'
 
     # builds each html page
@@ -93,6 +96,7 @@ class Easy
   end 
 
   def process_posts
+    @backtracking = "/#blog"
     FileUtils.mkdir @site +'/posts'
     list = Dir['posts/*.md'].reverse
     list.each { |post|
