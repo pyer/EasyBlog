@@ -6,7 +6,7 @@ require 'webrick'
 require './lib/easy.rb'
 
 # Target folder must be absolute
-TARGET = Dir.pwd + '/site'
+TARGET = Dir.pwd + '/www'
 
 CLEAN.include TARGET
 
@@ -16,9 +16,14 @@ task :build => :clean do
   builder.process
 end
 
-desc "Deploy"
+desc "Install on localhost"
+task :install => :build do
+  system("sudo cp -r www /srv/")
+end
+
+desc "Deploy on Gandi VPS"
 task :deploy => :build do
-  system("sudo cp -r site /srv/")
+  system("scp -r www wylie:/srv/")
 end
 
 desc 'Run server'
