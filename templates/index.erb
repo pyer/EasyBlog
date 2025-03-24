@@ -7,10 +7,12 @@
       <meta name="description"
          content="A clean and responsive blog template for developers. Using only HTML, CSS, and JavaScript">
       <meta name="author" content="Pierre BAZONNARD">
-      <title>Pyer's blog</title>
+      <title><%= @brand_title %></title>
       <link rel="stylesheet" href="./css/main.css" />
       <link rel="stylesheet" href="./css/home.css" />
       <link rel="stylesheet" href="./css/blog.css" />
+      <link rel="stylesheet" href="./css/pages.css" />
+      <link rel="stylesheet" href="./css/links.css" />
       <link rel="stylesheet" href="./css/contact.css" />
       <link rel="stylesheet" href="./css/about.css" />
    </head>
@@ -19,7 +21,7 @@
          <div class="container">
             <div class="row">
                <div class="brand-name">
-                  <a href="/">Pyer</a>
+                  <a href="/"><%= @brand_name %></a>
                </div>
                <div class="hamburger">
                   <img src="./img/menu.png" alt="menu"/>
@@ -88,21 +90,25 @@
                <% end %>
          </div>
       </section>
-      <section class="pages" id="links">
+      <section class="links" id="links">
          <div class="container">
-               <div class="title text-center en">
-                  <h1>Links</h1>
+               <div class="title text-center">
+                  <div class="en">
+                     <h1>Links</h1>
+                  </div>
                </div>
-               <div class="title text-center fr">
-                  <h1>Liens</h1>
+               <div class="title text-center">
+                  <div class="fr">
+                     <h1>Liens</h1>
+                  </div>
                </div>
-               <div class="pages-link">
+               <div class="link">
                   <a target="_blank" href="https://gw.geneanet.org/pierrebazonnard"><img alt="Geneanet" src="./img/Geneanet_logo.png" height="32"/></a></li>
                </div>
-               <div class="pages-link">
+               <div class="link">
                   <a target="_blank" href="https://github.com/pyer"><img alt="GitHub" src="./img/GitHub_logo.png" height="36"/></a></li>
                </div>
-               <div class="pages-link">
+               <div class="link">
                   <a target="_blank" href="https://mon.bazonnard.fr"><img alt="Monitorix" src="./img/Monitorix_logo.png" height="32"/></a></li>
                </div>
          </div>

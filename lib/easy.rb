@@ -10,6 +10,8 @@ class Easy
   attr_reader :list_of_pages, :list_of_posts
   attr_reader :index, :template
   attr_reader :backtracking
+  attr_reader :brand_name
+  attr_reader :brand_title
   attr_reader :copyright
 
   def initialize(site)
@@ -18,8 +20,10 @@ class Easy
     @list_of_posts = []
     @template = File.read('templates/page.erb')
     @index = File.read('templates/index.erb')
-    @backtracking = "/#pages"
-    @copyright = "&#169;" + Time.now.year.to_s + " | Developed by Pierre Bazonnard | Designed by Puskar Adhikari | All rights reserved."
+    @backtracking  = "/#pages"
+    @brand_name    = "PB"
+    @brand_title   = "Easy blog"
+    @copyright     = "&#169;" + Time.now.year.to_s + " | Developed by Pierre Bazonnard | Designed by Puskar Adhikari | All rights reserved."
   end
 
   def process

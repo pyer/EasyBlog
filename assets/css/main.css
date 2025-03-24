@@ -1,5 +1,7 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@font-face {
+  font-family: Lobster;
+  src: url(../font/Lobster-Regular.ttf);
+}
 
 html {
   scroll-behavior: smooth;
@@ -47,9 +49,13 @@ header .row {
   align-items: center;
 }
 
+.banner {
+    background-color: #01143e;
+}
+
 .brand-name a {
-  font-family: 'Lobster', cursive;
-  font-size: 40px;
+  font-family: Lobster, cursive;
+  font-size: 48px;
   font-weight: 500;
   color: #ecf1fa;
   position: relative;

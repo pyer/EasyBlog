@@ -4,16 +4,16 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="Pierre BAZONNARD">
-      <title>Pyer's blog</title>
+      <title><%= @brand_title %></title>
       <link rel="stylesheet" href="../css/main.css" />
       <link rel="stylesheet" href="../css/blog.css" />
    </head>
    <body>
-      <header class="blog-page">
+      <header class="banner">
          <div class="container">
             <div class="row">
                <div class="brand-name">
-                  <a href="/">Pyer</a>
+                  <a href="/"><%= @brand_name %></a>
                </div>
                <div class="blog-exit">
                   <a href="<%= @backtracking %>">X</a>
