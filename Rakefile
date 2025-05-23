@@ -21,7 +21,7 @@ task :install => :build do
   system("sudo cp -r www /srv/")
 end
 
-desc "Deploy on Gandi VPS"
+desc "Deploy on VPS"
 task :deploy => :build do
   system("scp -r www wylie:/srv/")
 end

@@ -56,6 +56,18 @@ window.onload = function () {
     // default lang is french
     selectFrench();
   }
+  // Upload files
+  const file = document.getElementById("fileInput");
+  document.getElementById("uploadButton").onclick = function() {
+    file.click();
+  };
+  file.onchange = function(e){
+    console.log("fileInput");
+     if (this.files && this.files[0]) {
+        console.log(this.files);
+        alert(JSON.stringify(this.files[0].name));
+     }
+  };
 }
 
 //Header fixed

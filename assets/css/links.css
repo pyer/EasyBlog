@@ -16,3 +16,17 @@
     text-align: center !important;
     font-size: 18px !important;
 }
+
+.link input {
+  display: none;
+}
+
+.link button {
+  border: 0;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
