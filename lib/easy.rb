@@ -43,8 +43,7 @@ class Easy
   end
 
   def markdown_to_html(text)
-    renderer = Redcarpet::Render::HTML.new
-    parser =Redcarpet::Markdown.new(renderer)
+    parser   = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     parser.render(text)
   end
 
