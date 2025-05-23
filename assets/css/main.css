@@ -26,6 +26,12 @@ header {
   padding: 0px 15px;
 }
 
+code {
+  background-color: #ecf1fa;
+  font-family: monospace;
+  white-space: pre;
+}
+
 .fixed {
   background-color: #ecf1fa;
   position: fixed;
