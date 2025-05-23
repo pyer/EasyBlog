@@ -1,12 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    cgi (0.4.1)
-    erb (4.0.4)
-      cgi (>= 0.3.3)
-    fileutils (1.7.2)
-    redcarpet (3.6.0)
-    webrick (1.8.2)
+    erb (5.0.1)
+    fileutils (1.7.3)
+    redcarpet (3.6.1)
+    webrick (1.9.1)
 
 PLATFORMS
   ruby
@@ -19,7 +17,7 @@ DEPENDENCIES
   webrick
 
 RUBY VERSION
-   ruby 3.3.5p100
+   ruby 3.3.8p144
 
 BUNDLED WITH
-   2.5.16
+   2.6.8
