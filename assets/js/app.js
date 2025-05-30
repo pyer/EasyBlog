@@ -19,6 +19,8 @@ function hide(elements) {
   }
 }
 
+// Lang selector
+
 function selectEnglish() {
   console.log("selectEnglish");
   /*
@@ -56,21 +58,88 @@ window.onload = function () {
     // default lang is french
     selectFrench();
   }
-  // Upload files
-  const file = document.getElementById("fileInput");
-  document.getElementById("uploadButton").onclick = function() {
-    file.click();
-  };
-  file.onchange = function(e){
-    console.log("fileInput");
-     if (this.files && this.files[0]) {
-        console.log(this.files);
-        alert(JSON.stringify(this.files[0].name));
-     }
-  };
 }
 
-//Header fixed
+// Upload files
+
+const url = "https://www.bazonnard.fr/upload/";
+
+let interval = null;
+let progress = 0;
+let inProgress = false;
+const step = 5;
+
+function animateLoading() {
+  progress += step;
+  if (progress>100) {
+    progress = 0;
+  }
+  document.getElementById("progressBar").style.width = "" + progress + "%";
+}
+
+function startLoading(fileName) {
+  console.log("startLoading");
+  document.getElementById("uploadText").innerText = "Uploading " + fileName;
+  document.getElementById("progressBar").textContent = "";
+  interval = setInterval(animateLoading, 100);
+  inProgress = true;
+}
+
+function stopLoading(msg) {
+  console.log("stopLoading");
+  clearInterval(interval);
+  inProgress = false;
+//    document.body.classList.remove('loading');
+  document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("progressBar").textContent = msg;
+//    document.getElementById("progressBar").style.background-color = 'green';
+//    document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("uploadText").innerText = "Upload";
+}
+
+const reqHandler = (r) => {
+  /*
+    let msg = "";
+		if (r.ok) {
+      msg = "OK";
+    } else {
+      msg = "Error " + r.status + " : " + r.statusText;
+		}
+    stopLoading();
+    console.log(msg);
+    */
+		if (r.ok) {
+      stopLoading("OK");
+    } else {
+      stopLoading("Error " + r.status + " : " + r.statusText);
+		}
+		return r;
+}
+
+const reqMethod = (method, url, body, headers) => {
+	return fetch(url, {method, body, headers});
+}
+
+document.getElementById("fileInput").onchange = function () {
+  console.log("fileInput change");
+  if (!inProgress) {
+    if (this.files && this.files[0]) {
+        const file = this.files[0];
+        startLoading(file.name);
+		    return reqMethod("PUT", url + file.name, file, {}).then(reqHandler);
+    }
+  }
+}
+
+document.getElementById("uploadButton").onclick = function() {
+  console.log("uploadButton");
+  if (!inProgress) {
+    document.getElementById("fileInput").click();
+  }
+}
+
+//fixed header
+
 window.onscroll = function () {
   const docScrollTop = document.documentElement.scrollTop;
 

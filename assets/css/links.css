@@ -1,20 +1,20 @@
 .links {
-    background-color: #fff;
-    padding: 100px 0px;
+  background-color: #fff;
+  padding: 100px 0px;
 }
 
 .link {
-    text-align: center !important;
-    font-size: 18px !important;
-    color: #838383;
-    background-color: #ecf1fa;
-    margin: 10px;
-    padding: 10px 0;
+  text-align: center !important;
+  font-size: 18px !important;
+  color: #838383;
+  background-color: #ecf1fa;
+  margin: 10px;
+  padding: 10px 0;
 }
 
 .link a {
-    text-align: center !important;
-    font-size: 18px !important;
+  text-align: center !important;
+  font-size: 18px !important;
 }
 
 .link input {
@@ -22,11 +22,19 @@
 }
 
 .link button {
+  background-color: #ecf1fa;
   border: 0;
   cursor: pointer;
   font-size: 25px;
   font-weight: 500;
   margin: 0;
   padding: 0;
+}
+
+#progressBar {
+  background-color: #b8ddb8;
+  height: 24px;
+  text-align: center !important;
+  width: 0%;
 }
 
