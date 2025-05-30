@@ -69,49 +69,40 @@ let progress = 0;
 let inProgress = false;
 const step = 5;
 
+const progressBar = document.getElementById("progressBar");
+
 function animateLoading() {
   progress += step;
   if (progress>100) {
     progress = 0;
   }
-  document.getElementById("progressBar").style.width = "" + progress + "%";
+  progressBar.style.width = "" + progress + "%";
 }
 
 function startLoading(fileName) {
   console.log("startLoading");
   document.getElementById("uploadText").innerText = "Uploading " + fileName;
-  document.getElementById("progressBar").textContent = "";
+  progressBar.textContent = "";
+  progressBar.style.backgroundColor = "#b8ddb8";
   interval = setInterval(animateLoading, 100);
   inProgress = true;
 }
 
-function stopLoading(msg) {
+function stopLoading(msg, color) {
   console.log("stopLoading");
   clearInterval(interval);
   inProgress = false;
-//    document.body.classList.remove('loading');
-  document.getElementById("progressBar").style.width = "100%";
-  document.getElementById("progressBar").textContent = msg;
-//    document.getElementById("progressBar").style.background-color = 'green';
-//    document.getElementById("progressBar").style.width = "100%";
+  progressBar.style.width = "100%";
+  progressBar.style.backgroundColor = color;
+  progressBar.textContent = msg;
   document.getElementById("uploadText").innerText = "Upload";
 }
 
 const reqHandler = (r) => {
-  /*
-    let msg = "";
 		if (r.ok) {
-      msg = "OK";
+      stopLoading("OK", "#b8ddb8");
     } else {
-      msg = "Error " + r.status + " : " + r.statusText;
-		}
-    stopLoading();
-    console.log(msg);
-    */
-		if (r.ok) {
-      stopLoading("OK");
-    } else {
-      stopLoading("Error " + r.status + " : " + r.statusText);
+      stopLoading("Error " + r.status + " : " + r.statusText, "red");
 		}
 		return r;
 }
@@ -121,18 +112,22 @@ const reqMethod = (method, url, body, headers) => {
 }
 
 document.getElementById("fileInput").onchange = function () {
-  console.log("fileInput change");
   if (!inProgress) {
     if (this.files && this.files[0]) {
         const file = this.files[0];
-        startLoading(file.name);
-		    return reqMethod("PUT", url + file.name, file, {}).then(reqHandler);
+        console.log("Upload " + file.name + "(" + file.size + " bytes)");
+        if (file.size > 16777200) {
+          // Max file size is 16 Mb
+          stopLoading("Error : the file " + file.name + " is too large.", "red");
+        } else {
+          startLoading(file.name);
+		      return reqMethod("PUT", url + file.name, file, {}).then(reqHandler);
+        }
     }
   }
 }
 
 document.getElementById("uploadButton").onclick = function() {
-  console.log("uploadButton");
   if (!inProgress) {
     document.getElementById("fileInput").click();
   }
