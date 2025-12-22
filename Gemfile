@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby '3.3.8'
+ruby '3.4.5'
 
 gem 'erb'
 gem 'fileutils'
 gem 'redcarpet'
-gem 'webrick'
+gem 'puma'
 

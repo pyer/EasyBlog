@@ -1,10 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    erb (5.0.1)
-    fileutils (1.7.3)
+    erb (6.0.1)
+    fileutils (1.8.0)
+    nio4r (2.7.5)
+    puma (7.1.0)
+    nio4r (~> 2.0)
     redcarpet (3.6.1)
-    webrick (1.9.1)
 
 PLATFORMS
   ruby
@@ -13,11 +15,11 @@ PLATFORMS
 DEPENDENCIES
   erb
   fileutils
+  puma
   redcarpet
-  webrick
 
 RUBY VERSION
-   ruby 3.3.8p144
+   ruby 3.4.5p51
 
 BUNDLED WITH
-   2.6.8
+   2.6.9

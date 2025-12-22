@@ -1,7 +1,7 @@
 # Easy web site generator
 
 require 'rake/clean'
-require 'webrick'
+require 'puma'
 
 require './lib/easy.rb'
 
@@ -34,8 +34,6 @@ end
 
 desc 'Run server'
 task :run do
-  server = WEBrick::HTTPServer.new(:Port => 8080, :DocumentRoot => TARGET)
-  trap('INT') { server.stop }
-  server.start
+  system("rackup --port 8080 --server puma")
 end
 
