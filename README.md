@@ -5,7 +5,7 @@ Ruby static web site generator
 
 - rake build : builds HTML pages in `site` directory.
 - rake clean : deletes `site` directory and temporary files.
-- rake run   : runs Webrick server. Then the web site can be tested on [http://localhost:8080]
+- rake run   : runs Puma server to test the web site on [http://localhost:8080]
 
 ## Content
 

@@ -2,7 +2,7 @@ require 'rack/static'
 
 use Rack::Static,
     :urls => ["/"],
-    :root => "/srv/www",
+    :root => "./www",
     :cascade => true
 
 run lambda { |env|
@@ -11,6 +11,6 @@ run lambda { |env|
     {
       'Content-Type'  => 'text/html',
     },
-    File.open('/srv/www/index.html', File::RDONLY)
+    File.open('./www/index.html', File::RDONLY)
   ]
 }
