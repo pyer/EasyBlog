@@ -1,0 +1,46 @@
+macdef mkdir
+  mkdir www/css
+  mkdir www/font
+  mkdir www/img
+  mkdir www/js
+  mkdir www/pages
+  mkdir www/posts
+
+macdef deploy
+  put www/favicon.ico
+  put www/index.html
+  put www/404.html
+  put www/font/Lobster-Regular.ttf
+  put www/js/app.js
+
+macdef css
+  put www/css/about.css
+  put www/css/blog.css
+  put www/css/contact.css
+  put www/css/home.css
+  put www/css/links.css
+  put www/css/main.css
+  put www/css/pages.css
+  put www/css/portfolio.css
+
+macdef img
+  put www/img/Geneanet_logo.png
+  put www/img/GitHub_logo.png
+  put www/img/hero.png
+  put www/img/houston404.png
+  put www/img/menu.png
+  put www/img/Monitorix_logo.png
+  put www/img/pyer.png
+  put www/img/thepuskar.jpeg
+  put www/img/upload.png
+
+macdef pages
+  put www/pages/DHCP_server.html
+  put www/pages/Lorem_ipsum.html
+  put www/pages/Markdown_syntax.html
+
+macdef posts
+  put www/posts/2019-02-07_welcome.html
+  put www/posts/2019-02-17_sample.html
+  put www/posts/2024-11-28_online.html
+

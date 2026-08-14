@@ -23,13 +23,8 @@ end
 
 desc "Deploy on VPS"
 task :deploy => :build do
-  system("scp -r www/* wylie:/srv/www/")
-end
-
-desc "Update CSS on VPS"
-task :update do
-  system("scp -r assets/css wylie:/srv/www/")
-  system("scp -r assets/js  wylie:/srv/www/")
+  system("cat .netrc macdef >$HOME/.netrc")
+  system("ftp ftp.cluster121.hosting.ovh.net")
 end
 
 desc 'Run server'
