@@ -5,7 +5,6 @@ Ruby static web site generator
 
 - make clean   : deletes `site` directory and temporary files.
 - make build   : builds HTML pages in `site` directory.
-- make install : installs files on localhost
 - make deploy  : deploys files on remote server
 - make run     : runs Puma server to test the web site on [http://localhost:8080]
 

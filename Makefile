@@ -1,4 +1,4 @@
-.PHONY: clean build install deploy run
+.PHONY: clean build deploy run
 
 all: build
 
@@ -9,13 +9,11 @@ clean:
 build: clean
 	ruby ./easy.rb
 
-install: build
-	sudo cp -r www /srv/
-
 deploy: build
 	cat .netrc macdef >${HOME}/.netrc
 	ftp ftp.cluster121.hosting.ovh.net
 
-run:
+run: build
+	sudo cp -r www /srv/
 	rackup --port 8080 --server puma
 
