@@ -9,8 +9,8 @@ run lambda { |env|
   [
     200,
     {
-      'Content-Type'  => 'text/html',
+      'content-type'  => 'text/html',
     },
-    File.open('./www/index.html', File::RDONLY)
+    File.open('./www/blog.html', File::RDONLY)
   ]
 }

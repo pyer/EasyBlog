@@ -7,8 +7,10 @@ macdef mkdir
   mkdir www/posts
 
 macdef deploy
+  put www/index.php
+  put www/info.php
+  put www/blog.html
   put www/favicon.ico
-  put www/index.html
   put www/404.html
   put www/font/Lobster-Regular.ttf
   put www/js/app.js

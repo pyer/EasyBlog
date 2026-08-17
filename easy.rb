@@ -8,7 +8,7 @@ require 'redcarpet'
 class Easy
   attr_reader :site
   attr_reader :list_of_pages, :list_of_posts
-  attr_reader :index, :template
+  attr_reader :homepage, :template
   attr_reader :backtracking
   attr_reader :brand_name
   attr_reader :brand_title
@@ -19,7 +19,7 @@ class Easy
     @list_of_pages = []
     @list_of_posts = []
     @template = File.read('templates/page.erb')
-    @index = File.read('templates/index.erb')
+    @homepage = File.read('templates/home.erb')
     @backtracking  = "/#pages"
     @brand_name    = "PB"
     @brand_title   = "Easy blog"
@@ -27,11 +27,12 @@ class Easy
   end
 
   def process
+    FileUtils.rm_rf(@site)
     FileUtils.cp_r('assets', @site)
     process_templates
     process_pages
     process_posts
-    process_index
+    process_homepage
   end
 
   private
@@ -52,9 +53,9 @@ class Easy
     write(name, renderer.result(binding))
   end
 
-  def process_index
-    renderer = ERB.new(@index)
-    write('index', renderer.result(binding))
+  def process_homepage
+    renderer = ERB.new(@homepage)
+    write('blog', renderer.result(binding))
   end
 
   def process_templates
@@ -99,7 +100,7 @@ class Easy
   end 
 
   def process_posts
-    @backtracking = "/#blog"
+    @backtracking = "/#posts"
     FileUtils.mkdir @site +'/posts'
     list = Dir['posts/*.md'].reverse
     list.each { |post|
@@ -114,3 +115,9 @@ class Easy
   end 
 
 end
+
+# Target folder must be absolute
+TARGET = Dir.pwd + '/www'
+puts "Building " + TARGET
+builder = Easy.new(TARGET)
+builder.process
