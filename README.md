@@ -8,6 +8,9 @@ Ruby static web site generator
 - make deploy  : deploys files on remote server
 - make run     : runs Puma server to test the web site on [http://localhost:8080]
 
+Files are deployed on the server via FTP.
+Macros commands are defined in the file macdef and run with "$ macro" in the FTP shell.
+
 ## Content
 
 ### Pages
