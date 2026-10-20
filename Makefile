@@ -14,6 +14,5 @@ deploy: build
 	ftp ftp.cluster121.hosting.ovh.net
 
 run: build
-	sudo cp -r www /srv/
-	rackup --port 8080 --server puma
+	puma
 
