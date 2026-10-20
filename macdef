@@ -21,7 +21,6 @@ macdef deploy
 macdef css
   put www/css/about.css
   put www/css/blog.css
-  put www/css/contact.css
   put www/css/home.css
   put www/css/links.css
   put www/css/main.css
